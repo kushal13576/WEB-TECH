@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family:Arial;background:#eef7ff">
+
+<h3 style="color:#4b0082">DOM Manipulation Demo</h3>
+
+<p id="msg1">Message 1</p>
+<p class="msg2">Message 2</p>
+
+<button onclick="changeText()">Click to Change Text</button>
+
+<div id="output" style="margin-top:10px;font-weight:bold;"></div>
+
+<script>
+function changeText() {
+
+  document.getElementById("msg1").innerHTML = "Updated using getElementById()";
+
+  document.querySelector(".msg2").innerHTML = "Updated using querySelector()";
+  document.getElementById("output").innerHTML =
+    "<span style='color:green'>DOM updated successfully!</span>";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Listener Demo</title>
+
+<style>
+    body{
+        font-family: Arial;
+        padding: 30px;
+    }
+
+    .box{
+        width: 150px;
+        height: 150px;
+        background: royalblue;
+        margin: 20px 0;
+        transition: 0.3s;
+    }
+
+    .active{
+        background: crimson;
+        transform: scale(1.1);
+    }
+
+    .highlight{
+        border: 4px solid gold;
+    }
+
+    input{
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    button{
+        padding: 8px 14px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Mouse & Keyboard Event Interactivity</h2>
+
+<!-- Mouse Event Area -->
+<div id="box" class="box"></div>
+
+<button id="addBtn">Add Click Event</button>
+<button id="removeBtn">Remove Click Event</button>
+
+<br><br>
+
+<!-- Keyboard Event Area -->
+<input type="text" id="inputBox" placeholder="Type something...">
+<p id="output"></p>
+
+<script>
+    const box = document.getElementById("box");
+    const addBtn = document.getElementById("addBtn");
+    const removeBtn = document.getElementById("removeBtn");
+    const inputBox = document.getElementById("inputBox");
+    const output = document.getElementById("output");
+
+    // ===== Mouse Events =====
+    function boxClick(){
+        box.classList.toggle("active");
+    }
+
+    // addEventListener
+    addBtn.addEventListener("click", function(){
+        box.addEventListener("click", boxClick);
+        alert("Click event added to box");
+    });
+
+    // removeEventListener
+    removeBtn.addEventListener("click", function(){
+        box.removeEventListener("click", boxClick);
+        alert("Click event removed from box");
+    });
+
+    // Hover events
+    box.addEventListener("mouseenter", function(){
+        box.classList.add("highlight");
+    });
+
+    box.addEventListener("mouseleave", function(){
+        box.classList.remove("highlight");
+    });
+
+    // ===== Keyboard Events =====
+    inputBox.addEventListener("keydown", function(e){
+        output.innerText = "Key Down: " + e.key;
+    });
+
+    inputBox.addEventListener("keyup", function(e){
+        output.innerText = "Key Up: " + e.key;
+    });
+
+    // Global keyboard event
+    document.addEventListener("keydown", function(e){
+        if(e.key === "Enter"){
+            alert("Enter key pressed!");
+        }
+    });
+</script>
+
+</body>
+</html>
