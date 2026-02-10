@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family:Arial;background:#eef7ff">
+<h3 style="color:#4b0082">User-Defined Functions & Scope Demo</h3>
+<div id="output"></div>
+
+<script>
+let out = document.getElementById("output");
+
+function greet(name) {
+  return "Hello " + name + "!";
+}
+
+out.innerHTML += `<p style="background:#caffcc">${greet("Kushal")}</p>`;
+
+var a = 10;    
+let b = 20;      
+const c = 30;
+out.innerHTML += `<p style="background:#ffd9c7">var a = ${a}</p>`;
+out.innerHTML += `<p style="background:#ffeaa7">let b = ${b}</p>`;
+out.innerHTML += `<p style="background:#d3e6ff">const c = ${c}</p>`;
+{
+  var a = 100;   
+  let b = 200;   
+  const c = 300; 
+  out.innerHTML += `<p style="background:#ffc4f0">Inside block → a:${a}, b:${b}, c:${c}</p>`;
+}
+out.innerHTML += `<p style="background:#c9ffd1">Outside block → a:${a}, b:${b}, c:${c}</p>`;
+</script>
+</body>
+</html>

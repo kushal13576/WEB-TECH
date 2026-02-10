@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Arithmetic Calculator</h2>
+
+Number 1: <input id="n1" type="number"><br><br>
+Number 2: <input id="n2" type="number"><br><br>
+
+<select id="op">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select><br><br>
+
+<button onclick="calc()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calc() {
+  let a = parseFloat(document.getElementById("n1").value);
+  let b = parseFloat(document.getElementById("n2").value);
+  let o = document.getElementById("op").value;
+  let r = eval(a + o + b);
+  document.getElementById("result").innerHTML = "Result: " + r;
+}
+</script>
+
+</body>
+</html>
