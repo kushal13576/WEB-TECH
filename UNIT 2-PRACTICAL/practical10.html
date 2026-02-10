@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Div and Span Example</title>
+  <style>
+    .container {
+      width: 80%;
+      margin: auto;
+      border: 2px solid #333;
+      padding: 10px;
+    }
+    .header, .footer {
+      background-color: #2196f3;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .content {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .sidebar {
+      width: 30%;
+      background: #f0f0f0;
+      padding: 10px;
+    }
+    .main {
+      width: 70%;
+      background: #e8f5e9;
+      padding: 10px;
+    }
+    span.highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header"><h2>My Web Layout</h2></div>
+
+    <div class="content">
+      <div class="sidebar">Sidebar Content</div>
+      <div class="main">
+        Main Content with a <span class="highlight">highlighted word</span> using span.
+      </div>
+    </div>
+
+    <div class="footer">Footer Section</div>
+  </div>
+
+</body>
+</html>
