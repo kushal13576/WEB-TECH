@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Layout</title>
+<style>
+body { margin:0; font-family:Arial; 
+background-color: red;}
+header {
+  background:#4b0082;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+.container {
+  display:flex;
+}
+aside {
+  width:25%;
+  background:#e4d8ff;
+  padding:15px;
+  float:left; 
+}
+main {
+  width:75%;
+  background:#fff;
+  padding:15px;
+  float:left;
+}
+.container::after { content:''; display:block; clear:both; }
+@media (max-width:900px) and (min-width:600px) {
+  .container { flex-direction:column; }
+  aside, main {
+    width:100%;
+  }
+}
+@media (max-width:600px) {
+  .container { flex-direction:column; }
+  aside, main {
+    width:100%;
+    float:none;
+  }
+  header { font-size:18px; }
+}
+</style>
+</head>
+
+<body>
+<header><h2>Responsive Layout Demo</h2></header>
+
+<div class="container">
+  <aside><h3>Sidebar</h3><p>Navigation / Menu</p></aside>
+  <main><h3>Content Area</h3><p>Main content goes here.</p></main>
+</div>
+
+</body>
+</html>
